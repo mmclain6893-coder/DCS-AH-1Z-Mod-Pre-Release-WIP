@@ -1,0 +1,60 @@
+livery = {
+    {"ah1z_um_0555_Bell_AH_1Z_int_13", 0, "BELL_AH_1Z_INT_13_ALBD", false};
+    {"ah1z_um_0555_Bell_AH_1Z_int_13", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_13_COMP", false};
+    {"ah1z_um_0555_Bell_AH_1Z_int_13", 1, "BELL_AH_1Z_INT_13_NORM", false};
+    {"ah1z_um_0556_Obj_Bell_AH_1Z_int_01", 0, "BELL_AH_1Z_INT_01_ALBD", false};
+    {"ah1z_um_0556_Obj_Bell_AH_1Z_int_01", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_01_COMP", false};
+    {"ah1z_um_0556_Obj_Bell_AH_1Z_int_01", 1, "BELL_AH_1Z_INT_01_NORM", false};
+    {"ah1z_um_0557_Obj_Bell_AH_1Z_int_02", 0, "BELL_AH_1Z_INT_02_ALBD", false};
+    {"ah1z_um_0557_Obj_Bell_AH_1Z_int_02", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_02_COMP", false};
+    {"ah1z_um_0557_Obj_Bell_AH_1Z_int_02", 1, "BELL_AH_1Z_INT_02_NORM", false};
+    {"ah1z_um_0558_Obj_Bell_AH_1Z_int_03", 0, "BELL_AH_1Z_INT_03_ALBD", false};
+    {"ah1z_um_0558_Obj_Bell_AH_1Z_int_03", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_03_COMP", false};
+    {"ah1z_um_0558_Obj_Bell_AH_1Z_int_03", 1, "BELL_AH_1Z_INT_03_NORM", false};
+    {"ah1z_um_0559_Obj_Bell_AH_1Z_int_04", 0, "BELL_AH_1Z_INT_04_ALBD", false};
+    {"ah1z_um_0559_Obj_Bell_AH_1Z_int_04", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_04_COMP", false};
+    {"ah1z_um_0559_Obj_Bell_AH_1Z_int_04", 1, "BELL_AH_1Z_INT_04_NORM", false};
+    {"ah1z_um_0560_Bell_AH_1Z_int_05", 0, "BELL_AH_1Z_INT_05_ALBD", false};
+    {"ah1z_um_0560_Bell_AH_1Z_int_05", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_05_COMP", false};
+    {"ah1z_um_0560_Bell_AH_1Z_int_05", 1, "BELL_AH_1Z_INT_05_NORM", false};
+    {"ah1z_um_0561_Obj_Bell_AH_1Z_int_06", 0, "BELL_AH_1Z_INT_06_ALBD", false};
+    {"ah1z_um_0561_Obj_Bell_AH_1Z_int_06", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_06_COMP", false};
+    {"ah1z_um_0561_Obj_Bell_AH_1Z_int_06", 1, "BELL_AH_1Z_INT_06_NORM", false};
+    {"ah1z_um_0562_Bell_AH_1Z_int_07", 0, "BELL_AH_1Z_INT_07_ALBD", false};
+    {"ah1z_um_0562_Bell_AH_1Z_int_07", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_07_COMP", false};
+    {"ah1z_um_0562_Bell_AH_1Z_int_07", 1, "BELL_AH_1Z_INT_07_NORM", false};
+    {"ah1z_um_0563_Bell_AH_1Z_int_10", 0, "BELL_AH_1Z_INT_10_ALBD", false};
+    {"ah1z_um_0563_Bell_AH_1Z_int_10", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_10_COMP", false};
+    {"ah1z_um_0563_Bell_AH_1Z_int_10", 1, "BELL_AH_1Z_INT_10_NORM", false};
+    {"ah1z_um_0564_Bell_AH_1Z_int_11", 0, "BELL_AH_1Z_INT_11_ALBD", false};
+    {"ah1z_um_0564_Bell_AH_1Z_int_11", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_11_COMP", false};
+    {"ah1z_um_0564_Bell_AH_1Z_int_11", 1, "BELL_AH_1Z_INT_11_NORM", false};
+    {"ah1z_um_0565_Bell_AH_1Z_int_12", 0, "BELL_AH_1Z_INT_12_ALBD", false};
+    {"ah1z_um_0565_Bell_AH_1Z_int_12", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_12_COMP", false};
+    {"ah1z_um_0565_Bell_AH_1Z_int_12", 1, "BELL_AH_1Z_INT_12_NORM", false};
+    {"ah1z_um_0566_Obj_Bell_AH_1Z_int_14", 0, "BELL_AH_1Z_INT_14_ALBD", false};
+    {"ah1z_um_0566_Obj_Bell_AH_1Z_int_14", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_14_COMP", false};
+    {"ah1z_um_0566_Obj_Bell_AH_1Z_int_14", 1, "BELL_AH_1Z_INT_14_NORM", false};
+    {"ah1z_um_0567_Bell_AH_1Z_int_15", 0, "BELL_AH_1Z_INT_15_ALBD", false};
+    {"ah1z_um_0567_Bell_AH_1Z_int_15", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_15_COMP", false};
+    {"ah1z_um_0567_Bell_AH_1Z_int_15", 1, "BELL_AH_1Z_INT_15_NORM", false};
+    {"ah1z_um_0568_Bell_AH_1Z_int_16", 0, "BELL_AH_1Z_INT_16_ALBD", false};
+    {"ah1z_um_0568_Bell_AH_1Z_int_16", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_16_COMP", false};
+    {"ah1z_um_0568_Bell_AH_1Z_int_16", 1, "BELL_AH_1Z_INT_16_NORM", false};
+    {"ah1z_um_0569_Obj_Bell_AH_1Z_int_17", 0, "BELL_AH_1Z_INT_17_ALBD", false};
+    {"ah1z_um_0569_Obj_Bell_AH_1Z_int_17", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_17_COMP", false};
+    {"ah1z_um_0569_Obj_Bell_AH_1Z_int_17", 1, "BELL_AH_1Z_INT_17_NORM", false};
+    {"ah1z_um_0570_Obj_Bell_AH_1Z_int_decals", 0, "BELL_AH_1Z_INT_DECALS_ALBD", false};
+    {"ah1z_um_0570_Obj_Bell_AH_1Z_int_decals", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_DECALS_COMP", false};
+    {"ah1z_um_0570_Obj_Bell_AH_1Z_int_decals", 1, "BELL_AH_1Z_INT_DECALS_NORM", false};
+    {"ah1z_um_0570_Obj_Bell_AH_1Z_int_decals", SELF_ILLUMINATION, "BELL_AH_1Z_INT_DECALS_EMIS", false};
+    {"ah1z_um_0571_Bell_AH_1Z_int_glass_guages", 0, "BELL_AH_1Z_INT_GLASS_GUAGES_ALBD", false};
+    {"ah1z_um_0571_Bell_AH_1Z_int_glass_guages", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_GLASS_GUAGES_COMP", false};
+    {"ah1z_um_0571_Bell_AH_1Z_int_glass_guages", 1, "BELL_AH_1Z_INT_GLASS_GUAGES_NORM", false};
+    {"ah1z_um_0660_Bell_AH_1Z_int_08", 0, "BELL_AH_1Z_INT_08_ALBD", false};
+    {"ah1z_um_0660_Bell_AH_1Z_int_08", ROUGHNESS_METALLIC, "BELL_AH_1Z_INT_08_COMP", false};
+    {"ah1z_um_0660_Bell_AH_1Z_int_08", 1, "BELL_AH_1Z_INT_08_NORM", false};
+}
+name = "default"
+countries = {"USA"}
+

@@ -1,0 +1,10 @@
+
+dofile(LockOn_Options.script_path.."PilotMFD/indicator/common_page.lua")
+base_screen()
+draw_bezel_labels("FLT")
+draw_adi(0, 0.02, 1.35, false)
+text(nil, "VS", -0.35, 0.23, 0.017, font_dim)
+param_text(nil, "PILOT_VVI", "%+.0f", -0.31, 0.18, 0.018, font_green)
+text(nil, "NAV", 0.28, 0.29, 0.018, font_green)
+text(nil, "TAS", -0.35, -0.22, 0.017, font_dim)
+text(nil, "RALT", 0.31, -0.22, 0.017, font_dim)

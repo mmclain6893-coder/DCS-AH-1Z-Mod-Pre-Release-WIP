@@ -1,0 +1,18 @@
+﻿# Local/generated clutter
+*.bak
+*.bak_*
+*.ctd*
+*.bad*
+*.tmp
+*.log
+*.dmp
+*.crash
+*.track
+*.luabk
+*.7z
+*.rar
+backup*/
+**/backup*/
+**/bak*/
+ModelViewer/
+**/ModelViewer/

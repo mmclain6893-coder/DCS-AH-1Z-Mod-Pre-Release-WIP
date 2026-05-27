@@ -1,0 +1,26 @@
+
+dofile(LockOn_Options.script_path.."PilotMFD/indicator/common_page.lua")
+base_screen()
+draw_bezel_labels("WPN")
+text(nil, "SAFE", 0.0, 0.30, 0.026, font_green)
+line(nil, -0.30, 0.20, 0.30, 0.20, 0.003, mat_green)
+line(nil, -0.30, 0.20, -0.23, 0.12, 0.003, mat_green)
+line(nil, 0.30, 0.20, 0.23, 0.12, 0.003, mat_green)
+for i = -3, 3 do
+    local x = i * 0.08
+    rect(nil, x, 0.05, 0.045, 0.07, mat_black)
+    line(nil, x - 0.022, 0.085, x + 0.022, 0.085, 0.0025, mat_green)
+    line(nil, x - 0.022, 0.015, x + 0.022, 0.015, 0.0025, mat_green)
+    line(nil, x - 0.022, 0.085, x - 0.022, 0.015, 0.0025, mat_green)
+    line(nil, x + 0.022, 0.085, x + 0.022, 0.015, 0.0025, mat_green)
+    text(nil, tostring(math.abs(i) + 1), x, -0.015, 0.015, font_dim)
+end
+rect(nil, -0.34, 0.10, 0.07, 0.08, mat_black)
+rect(nil, 0.34, 0.10, 0.07, 0.08, mat_black)
+line(nil, -0.37, 0.10, -0.31, 0.10, 0.003, mat_green)
+line(nil, 0.31, 0.10, 0.37, 0.10, 0.003, mat_green)
+text(nil, "GUN", -0.30, -0.20, 0.019, font_green)
+text(nil, "RKT", -0.10, -0.20, 0.019, font_green)
+text(nil, "MSL", 0.10, -0.20, 0.019, font_green)
+text(nil, "ARM", 0.30, -0.20, 0.019, font_dim)
+text(nil, "LOADOUT", 0.25, 0.34, 0.015, font_dim)
