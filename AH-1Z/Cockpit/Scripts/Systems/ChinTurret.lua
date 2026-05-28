@@ -21,9 +21,9 @@ local manual_step = 0.012
 local slew_rate = 0.95
 
 local turret_arg_pairs = {
-    {19, 20},
-    {24, 25},
-    {26, 27},
+    -- AH-1Z exported model report:
+    -- Arg20 = chin gun azimuth, Arg21 = chin gun elevation.
+    {20, 21},
 }
 
 dev:listen_command(Keys.GunturretUp)
