@@ -53,15 +53,6 @@ local function get_arg(arg)
     return 0.0
 end
 
-local function set_model_arg(arg, value)
-    if set_aircraft_draw_argument_value then
-        set_aircraft_draw_argument_value(arg, value)
-    end
-    if set_cockpit_draw_argument_value then
-        set_cockpit_draw_argument_value(arg, value)
-    end
-end
-
 local function get_eye_reticle_target()
     local plt_yaw = get_arg(890)
     local plt_pitch = get_arg(891)
@@ -83,9 +74,11 @@ local function publish()
     reticle_yaw_param:set(manual_yaw)
     reticle_pitch_param:set(manual_pitch)
 
-    for i = 1, #turret_arg_pairs do
-        set_model_arg(turret_arg_pairs[i][1], turret_yaw)
-        set_model_arg(turret_arg_pairs[i][2], turret_pitch)
+    if set_aircraft_draw_argument_value then
+        for i = 1, #turret_arg_pairs do
+            set_aircraft_draw_argument_value(turret_arg_pairs[i][1], turret_yaw)
+            set_aircraft_draw_argument_value(turret_arg_pairs[i][2], turret_pitch)
+        end
     end
 end
 
