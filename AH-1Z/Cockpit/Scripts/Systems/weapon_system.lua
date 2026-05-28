@@ -20,6 +20,9 @@ local master_arm = 1
 local trigger_held = false
 local fire_timer = 0.0
 local fire_interval = 0.10
+local barrel_spin = 0.0
+local barrel_spin_arg = 22
+local barrel_spin_rate = 4.0
 local external_station_cursor = 0
 local external_station_order = {0, 1, 2, 3, 4, 5}
 
@@ -39,6 +42,12 @@ local function set_arg(arg, value)
     end
 end
 
+local function set_aircraft_arg(arg, value)
+    if set_aircraft_draw_argument_value then
+        set_aircraft_draw_argument_value(arg, value)
+    end
+end
+
 local function publish()
     set_arg(551, master_arm)
     if weapon_mode == WEAPON_CHIN then
@@ -48,6 +57,7 @@ local function publish()
     else
         set_arg(552, 0.0)
     end
+    set_aircraft_arg(barrel_spin_arg, barrel_spin)
 end
 
 local function station_has_weapon(idx)
@@ -135,6 +145,12 @@ function SetCommand(command, value)
 end
 
 function update()
+    if trigger_held and master_arm == 1 and weapon_mode == WEAPON_CHIN then
+        barrel_spin = barrel_spin + barrel_spin_rate * update_rate
+        if barrel_spin > 1.0 then
+            barrel_spin = barrel_spin - 2.0
+        end
+    end
     publish()
     if trigger_held then
         fire_timer = fire_timer + update_rate

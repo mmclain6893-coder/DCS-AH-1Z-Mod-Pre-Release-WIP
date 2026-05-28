@@ -179,7 +179,7 @@ AH1Z =
     }),
     DamageParts = {},
     -- Rotor, chin turret, sensor ball, and wind sensor draw args.
-    net_animation = {20, 21, 24, 25, 26, 27, 36, 37, 40},
+    net_animation = {20, 21, 22, 24, 25, 26, 27, 36, 37, 40},
     mechanimations = {},
     Guns =
     {
