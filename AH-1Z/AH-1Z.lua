@@ -238,7 +238,7 @@ AH1Z =
                 {CLSID = "{M261_M274}", arg_value = 1.0},
             }
         ),
-        pylon(4, 0, 3.36, 2.45, 1.67,
+        pylon(4, 0, 3.36, 2.45, -1.67,
             {arg = 424, arg_value = 0.0, use_full_connector_position = false, DisplayName = "R IN", FiY = -90.0},
             {
                 {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0},
