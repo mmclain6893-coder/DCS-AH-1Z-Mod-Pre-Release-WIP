@@ -189,6 +189,8 @@ AH1Z =
             {
                 muzzle_pos = {3.35, -1.15, 0.0},
                 supply_position = {2.10, -0.25, 0.0},
+                azimuth_initial = 90.0,
+                elevation_initial = 0.0,
                 max_burst_length = 750,
                 rates = {730},
                 barrel_circular_error = 0.006,
