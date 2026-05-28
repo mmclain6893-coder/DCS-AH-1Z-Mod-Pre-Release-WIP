@@ -211,14 +211,14 @@ AH1Z =
     },
     Pylons =
     {
-        pylon(1, 0, 1.25, -0.82, -2.85,
+        pylon(1, 0, 1.25, -0.82, 2.85,
             {arg = 421, arg_value = 0.0, use_full_connector_position = false, DisplayName = "L TIP"},
             {
                 {CLSID = "{AIM-9M}", arg_value = 1.0},
                 {CLSID = "{AIM-9L}", arg_value = 1.0},
             }
         ),
-        pylon(2, 0, 3.00, 2.45, -2.37,
+        pylon(2, 0, 3.00, 2.45, 2.37,
             {arg = 422, arg_value = 0.0, use_full_connector_position = false, DisplayName = "L OUT", FiY = -90.0},
             {
                 {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0}, -- DCS M299 4x AGM-114K
@@ -228,7 +228,7 @@ AH1Z =
                 {CLSID = "{M261_M274}", arg_value = 1.0}, -- DCS M261 19x Hydra M274
             }
         ),
-        pylon(3, 0, 3.36, 2.45, -1.67,
+        pylon(3, 0, 3.36, 2.45, 1.67,
             {arg = 423, arg_value = 0.0, use_full_connector_position = false, DisplayName = "L IN", FiY = -90.0},
             {
                 {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0},
@@ -238,7 +238,7 @@ AH1Z =
                 {CLSID = "{M261_M274}", arg_value = 1.0},
             }
         ),
-        pylon(4, 0, 3.36, 2.45, 1.67,
+        pylon(4, 0, 3.36, 2.45, -1.67,
             {arg = 424, arg_value = 0.0, use_full_connector_position = false, DisplayName = "R IN", FiY = -90.0},
             {
                 {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0},
@@ -248,7 +248,7 @@ AH1Z =
                 {CLSID = "{M261_M274}", arg_value = 1.0},
             }
         ),
-        pylon(5, 0, 3.00, 2.45, 2.37,
+        pylon(5, 0, 3.00, 2.45, -2.37,
             {arg = 425, arg_value = 0.0, use_full_connector_position = false, DisplayName = "R OUT", FiY = -90.0},
             {
                 {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0},
@@ -258,7 +258,7 @@ AH1Z =
                 {CLSID = "{M261_M274}", arg_value = 1.0},
             }
         ),
-        pylon(6, 0, 1.25, -0.82, 2.85,
+        pylon(6, 0, 1.25, -0.82, -2.85,
             {arg = 426, arg_value = 0.0, use_full_connector_position = false, DisplayName = "R TIP"},
             {
                 {CLSID = "{AIM-9M}", arg_value = 1.0},
