@@ -25,6 +25,9 @@ local barrel_spin_arg = 22
 local barrel_spin_rate = 4.0
 local external_station_cursor = 0
 local external_station_order = {0, 1, 2, 3, 4, 5}
+local master_arm_param = get_param_handle("AH1Z_MASTER_ARM")
+local weapon_mode_param = get_param_handle("AH1Z_WEAPON_MODE")
+local trigger_param = get_param_handle("AH1Z_TRIGGER_HELD")
 
 dev:listen_command(Keys.MasterArm)
 dev:listen_command(Keys.GunSelector)
@@ -49,6 +52,9 @@ local function set_aircraft_arg(arg, value)
 end
 
 local function publish()
+    master_arm_param:set(master_arm)
+    weapon_mode_param:set(weapon_mode)
+    trigger_param:set(trigger_held and 1 or 0)
     set_arg(551, master_arm)
     if weapon_mode == WEAPON_CHIN then
         set_arg(552, -0.5)

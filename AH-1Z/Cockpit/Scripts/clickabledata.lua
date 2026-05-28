@@ -248,23 +248,23 @@ elements["ah_1z_forward_mfd_left_btn_brt"] = default_button(_("MFD LEFT BTN BRT"
 
 elements["ah_1z_forward_mfd_left_btn_cont"] = default_button(_("MFD LEFT BTN CONT"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7120, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_left_btn_flt"] = default_button(_("MFD LEFT BTN FLT"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7121, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_flt"] = default_button(_("MFD LEFT BTN FLT"), devices.PILOT_MFD, device_commands.PilotMFDLeftFLT, 7121, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_left_btn_map"] = default_button(_("MFD LEFT BTN MAP"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7122, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_map"] = default_button(_("MFD LEFT BTN MAP"), devices.PILOT_MFD, device_commands.PilotMFDLeftMAP, 7122, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_left_btn_wpn"] = default_button(_("MFD LEFT BTN WPN"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7123, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_wpn"] = default_button(_("MFD LEFT BTN WPN"), devices.PILOT_MFD, device_commands.PilotMFDLeftWPN, 7123, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_left_btn_com"] = default_button(_("MFD LEFT BTN COM"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7124, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_com"] = default_button(_("MFD LEFT BTN COM"), devices.PILOT_MFD, device_commands.PilotMFDLeftCOM, 7124, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_left_btn_sys"] = default_button(_("MFD LEFT BTN SYS"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7125, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_sys"] = default_button(_("MFD LEFT BTN SYS"), devices.PILOT_MFD, device_commands.PilotMFDLeftSYS, 7125, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_left_btn_tdc"] = default_button(_("MFD LEFT BTN TDC"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7126, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_tdc"] = default_button(_("MFD LEFT BTN TDC"), devices.PILOT_MFD, device_commands.PilotMFDLeftTDC, 7126, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_left_btn_wca"] = default_button(_("MFD LEFT BTN WCA"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7127, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_wca"] = default_button(_("MFD LEFT BTN WCA"), devices.PILOT_MFD, device_commands.PilotMFDLeftWCA, 7127, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_left_btn_ew"] = default_button(_("MFD LEFT BTN EW"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7128, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_ew"] = default_button(_("MFD LEFT BTN EW"), devices.PILOT_MFD, device_commands.PilotMFDLeftEW, 7128, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_left_btn_tcc"] = default_button(_("MFD LEFT BTN TCC"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7129, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_tcc"] = default_button(_("MFD LEFT BTN TCC"), devices.PILOT_MFD, device_commands.PilotMFDLeftTCC, 7129, AH1Z_MFD_BUTTON_SPEED)
 
 elements["ah_1z_forward_mfd_right_btn_t1"] = default_button(_("MFD RIGHT BTN T1"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7130, AH1Z_MFD_BUTTON_SPEED)
 
@@ -306,21 +306,21 @@ elements["ah_1z_forward_mfd_right_btn_brt"] = default_button(_("MFD RIGHT BTN BR
 
 elements["ah_1z_forward_mfd_right_btn_cont"] = default_button(_("MFD RIGHT BTN CONT"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7149, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_right_btn_flt"] = default_button(_("MFD RIGHT BTN FLT"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7150, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_flt"] = default_button(_("MFD RIGHT BTN FLT"), devices.PILOT_MFD, device_commands.PilotMFDRightFLT, 7150, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_right_btn_map"] = default_button(_("MFD RIGHT BTN MAP"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7151, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_map"] = default_button(_("MFD RIGHT BTN MAP"), devices.PILOT_MFD, device_commands.PilotMFDRightMAP, 7151, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_right_btn_wpn"] = default_button(_("MFD RIGHT BTN WPN"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7152, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_wpn"] = default_button(_("MFD RIGHT BTN WPN"), devices.PILOT_MFD, device_commands.PilotMFDRightWPN, 7152, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_right_btn_com"] = default_button(_("MFD RIGHT BTN COM"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7153, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_com"] = default_button(_("MFD RIGHT BTN COM"), devices.PILOT_MFD, device_commands.PilotMFDRightCOM, 7153, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_right_btn_sys"] = default_button(_("MFD RIGHT BTN SYS"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7154, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_sys"] = default_button(_("MFD RIGHT BTN SYS"), devices.PILOT_MFD, device_commands.PilotMFDRightSYS, 7154, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_right_btn_tdc"] = default_button(_("MFD RIGHT BTN TDC"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7155, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_tdc"] = default_button(_("MFD RIGHT BTN TDC"), devices.PILOT_MFD, device_commands.PilotMFDRightTDC, 7155, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_right_btn_wca"] = default_button(_("MFD RIGHT BTN WCA"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7156, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_wca"] = default_button(_("MFD RIGHT BTN WCA"), devices.PILOT_MFD, device_commands.PilotMFDRightWCA, 7156, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_mfd_right_btn_tss"] = default_button(_("MFD RIGHT BTN TSS"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7157, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_tss"] = default_button(_("MFD RIGHT BTN TSS"), devices.PILOT_MFD, device_commands.PilotMFDRightTSS, 7157, AH1Z_MFD_BUTTON_SPEED)
 
 elements["ah_1z_forward_dfd_btn_l1"] = default_button(_("DFD BTN L1"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7158, AH1Z_MFD_BUTTON_SPEED)
 
@@ -358,7 +358,7 @@ elements["ah_1z_forward_dfd_8_btn"] = default_button(_("DFD 8 BTN"), devices.PIL
 
 elements["ah_1z_forward_dfd_9_btn"] = default_button(_("DFD 9 BTN"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7175, AH1Z_MFD_BUTTON_SPEED)
 
-elements["ah_1z_forward_dfd_flt_btn"] = default_button(_("DFD FLT BTN"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7176, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_dfd_flt_btn"] = default_button(_("DFD FLT BTN"), devices.PILOT_MFD, device_commands.PilotDFDFLT, 7176, AH1Z_MFD_BUTTON_SPEED)
 
 -- AH1Z pilot MFCD/DFD static-node aliases
 elements["ah_1z_forward_mfd_left_btn_t1_static"] = default_button(_("MFD LEFT BTN T1"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7101, AH1Z_MFD_BUTTON_SPEED)
@@ -381,15 +381,15 @@ elements["ah_1z_forward_mfd_left_btn_r5_static"] = default_button(_("MFD LEFT BT
 elements["ah_1z_forward_mfd_left_btn_r6_static"] = default_button(_("MFD LEFT BTN R6"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7118, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_mfd_left_btn_brt_static"] = default_button(_("MFD LEFT BTN BRT"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7119, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_mfd_left_btn_cont_static"] = default_button(_("MFD LEFT BTN CONT"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7120, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_left_btn_flt_static"] = default_button(_("MFD LEFT BTN FLT"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7121, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_left_btn_map_static"] = default_button(_("MFD LEFT BTN MAP"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7122, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_left_btn_wpn_static"] = default_button(_("MFD LEFT BTN WPN"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7123, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_left_btn_com_static"] = default_button(_("MFD LEFT BTN COM"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7124, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_left_btn_sys_static"] = default_button(_("MFD LEFT BTN SYS"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7125, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_left_btn_tdc_static"] = default_button(_("MFD LEFT BTN TDC"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7126, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_left_btn_wca_static"] = default_button(_("MFD LEFT BTN WCA"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7127, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_left_btn_ew_static"] = default_button(_("MFD LEFT BTN EW"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7128, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_left_btn_tcc_static"] = default_button(_("MFD LEFT BTN TCC"), devices.PILOT_MFD, device_commands.PilotMFDLeftButton, 7129, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_flt_static"] = default_button(_("MFD LEFT BTN FLT"), devices.PILOT_MFD, device_commands.PilotMFDLeftFLT, 7121, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_map_static"] = default_button(_("MFD LEFT BTN MAP"), devices.PILOT_MFD, device_commands.PilotMFDLeftMAP, 7122, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_wpn_static"] = default_button(_("MFD LEFT BTN WPN"), devices.PILOT_MFD, device_commands.PilotMFDLeftWPN, 7123, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_com_static"] = default_button(_("MFD LEFT BTN COM"), devices.PILOT_MFD, device_commands.PilotMFDLeftCOM, 7124, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_sys_static"] = default_button(_("MFD LEFT BTN SYS"), devices.PILOT_MFD, device_commands.PilotMFDLeftSYS, 7125, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_tdc_static"] = default_button(_("MFD LEFT BTN TDC"), devices.PILOT_MFD, device_commands.PilotMFDLeftTDC, 7126, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_wca_static"] = default_button(_("MFD LEFT BTN WCA"), devices.PILOT_MFD, device_commands.PilotMFDLeftWCA, 7127, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_ew_static"] = default_button(_("MFD LEFT BTN EW"), devices.PILOT_MFD, device_commands.PilotMFDLeftEW, 7128, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_left_btn_tcc_static"] = default_button(_("MFD LEFT BTN TCC"), devices.PILOT_MFD, device_commands.PilotMFDLeftTCC, 7129, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_mfd_right_btn_t1_static"] = default_button(_("MFD RIGHT BTN T1"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7130, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_mfd_right_btn_t2_static"] = default_button(_("MFD RIGHT BTN T2"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7131, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_mfd_right_btn_t3_static"] = default_button(_("MFD RIGHT BTN T3"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7132, AH1Z_MFD_BUTTON_SPEED)
@@ -410,14 +410,14 @@ elements["ah_1z_forward_mfd_right_btn_r5_static"] = default_button(_("MFD RIGHT 
 elements["ah_1z_forward_mfd_right_btn_r6_static"] = default_button(_("MFD RIGHT BTN R6"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7147, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_mfd_right_btn_brt_static"] = default_button(_("MFD RIGHT BTN BRT"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7148, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_mfd_right_btn_cont_static"] = default_button(_("MFD RIGHT BTN CONT"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7149, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_right_btn_flt_static"] = default_button(_("MFD RIGHT BTN FLT"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7150, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_right_btn_map_static"] = default_button(_("MFD RIGHT BTN MAP"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7151, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_right_btn_wpn_static"] = default_button(_("MFD RIGHT BTN WPN"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7152, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_right_btn_com_static"] = default_button(_("MFD RIGHT BTN COM"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7153, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_right_btn_sys_static"] = default_button(_("MFD RIGHT BTN SYS"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7154, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_right_btn_tdc_static"] = default_button(_("MFD RIGHT BTN TDC"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7155, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_right_btn_wca_static"] = default_button(_("MFD RIGHT BTN WCA"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7156, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_mfd_right_btn_tss_static"] = default_button(_("MFD RIGHT BTN TSS"), devices.PILOT_MFD, device_commands.PilotMFDRightButton, 7157, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_flt_static"] = default_button(_("MFD RIGHT BTN FLT"), devices.PILOT_MFD, device_commands.PilotMFDRightFLT, 7150, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_map_static"] = default_button(_("MFD RIGHT BTN MAP"), devices.PILOT_MFD, device_commands.PilotMFDRightMAP, 7151, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_wpn_static"] = default_button(_("MFD RIGHT BTN WPN"), devices.PILOT_MFD, device_commands.PilotMFDRightWPN, 7152, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_com_static"] = default_button(_("MFD RIGHT BTN COM"), devices.PILOT_MFD, device_commands.PilotMFDRightCOM, 7153, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_sys_static"] = default_button(_("MFD RIGHT BTN SYS"), devices.PILOT_MFD, device_commands.PilotMFDRightSYS, 7154, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_tdc_static"] = default_button(_("MFD RIGHT BTN TDC"), devices.PILOT_MFD, device_commands.PilotMFDRightTDC, 7155, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_wca_static"] = default_button(_("MFD RIGHT BTN WCA"), devices.PILOT_MFD, device_commands.PilotMFDRightWCA, 7156, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_mfd_right_btn_tss_static"] = default_button(_("MFD RIGHT BTN TSS"), devices.PILOT_MFD, device_commands.PilotMFDRightTSS, 7157, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_dfd_btn_l1_static"] = default_button(_("DFD BTN L1"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7158, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_dfd_btn_l2_static"] = default_button(_("DFD BTN L2"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7159, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_dfd_btn_l3_static"] = default_button(_("DFD BTN L3"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7160, AH1Z_MFD_BUTTON_SPEED)
@@ -436,4 +436,4 @@ elements["ah_1z_forward_dfd_6_btn_static"] = default_button(_("DFD 6 BTN"), devi
 elements["ah_1z_forward_dfd_7_btn_static"] = default_button(_("DFD 7 BTN"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7173, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_dfd_8_btn_static"] = default_button(_("DFD 8 BTN"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7174, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_dfd_9_btn_static"] = default_button(_("DFD 9 BTN"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7175, AH1Z_MFD_BUTTON_SPEED)
-elements["ah_1z_forward_dfd_flt_btn_static"] = default_button(_("DFD FLT BTN"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7176, AH1Z_MFD_BUTTON_SPEED)
+elements["ah_1z_forward_dfd_flt_btn_static"] = default_button(_("DFD FLT BTN"), devices.PILOT_MFD, device_commands.PilotDFDFLT, 7176, AH1Z_MFD_BUTTON_SPEED)

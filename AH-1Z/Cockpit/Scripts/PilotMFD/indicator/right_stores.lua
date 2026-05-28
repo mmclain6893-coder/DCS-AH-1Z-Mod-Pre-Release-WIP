@@ -1,26 +1,27 @@
-
 dofile(LockOn_Options.script_path.."PilotMFD/indicator/common_page.lua")
-base_screen()
-draw_bezel_labels("WPN")
-text(nil, "SAFE", 0.0, 0.30, 0.026, font_green)
-line(nil, -0.30, 0.20, 0.30, 0.20, 0.003, mat_green)
-line(nil, -0.30, 0.20, -0.23, 0.12, 0.003, mat_green)
-line(nil, 0.30, 0.20, 0.23, 0.12, 0.003, mat_green)
-for i = -3, 3 do
-    local x = i * 0.08
-    rect(nil, x, 0.05, 0.045, 0.07, mat_black)
-    line(nil, x - 0.022, 0.085, x + 0.022, 0.085, 0.0025, mat_green)
-    line(nil, x - 0.022, 0.015, x + 0.022, 0.015, 0.0025, mat_green)
-    line(nil, x - 0.022, 0.085, x - 0.022, 0.015, 0.0025, mat_green)
-    line(nil, x + 0.022, 0.085, x + 0.022, 0.015, 0.0025, mat_green)
-    text(nil, tostring(math.abs(i) + 1), x, -0.015, 0.015, font_dim)
-end
-rect(nil, -0.34, 0.10, 0.07, 0.08, mat_black)
-rect(nil, 0.34, 0.10, 0.07, 0.08, mat_black)
-line(nil, -0.37, 0.10, -0.31, 0.10, 0.003, mat_green)
-line(nil, 0.31, 0.10, 0.37, 0.10, 0.003, mat_green)
-text(nil, "GUN", -0.30, -0.20, 0.019, font_green)
-text(nil, "RKT", -0.10, -0.20, 0.019, font_green)
-text(nil, "MSL", 0.10, -0.20, 0.019, font_green)
-text(nil, "ARM", 0.30, -0.20, 0.019, font_dim)
-text(nil, "LOADOUT", 0.25, 0.34, 0.015, font_dim)
+
+base_screen("RIGHT MFCD")
+
+local flt = visible_root(nil, "PLT_MFD_RIGHT_PAGE", PAGE_FLT, true)
+draw_flight_page(flt)
+
+local wpn = visible_root(nil, "PLT_MFD_RIGHT_PAGE", PAGE_WPN, true)
+draw_weapon_page(wpn)
+
+local tsd = visible_root(nil, "PLT_MFD_RIGHT_PAGE", PAGE_TSD, true)
+draw_tsd_page(tsd)
+
+local sys = visible_root(nil, "PLT_MFD_RIGHT_PAGE", PAGE_SYS, true)
+draw_sys_page(sys)
+
+local com = visible_root(nil, "PLT_MFD_RIGHT_PAGE", PAGE_COM, true)
+draw_com_page(com)
+
+local tss = visible_root(nil, "PLT_MFD_RIGHT_PAGE", PAGE_TSS, true)
+draw_tss_page(tss)
+
+local wca = visible_root(nil, "PLT_MFD_RIGHT_PAGE", PAGE_WCA, true)
+draw_wca_page(wca)
+
+local ew = visible_root(nil, "PLT_MFD_RIGHT_PAGE", PAGE_EW, true)
+draw_ew_page(ew)

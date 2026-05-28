@@ -1,6 +1,17 @@
-
 dofile(LockOn_Options.script_path.."PilotMFD/indicator/common_page.lua")
-base_screen()
-draw_adi(0, 0.03, 0.95, true)
-text(nil, "STBY", 0.0, 0.36, 0.020, font_green)
-param_text(nil, "PILOT_HEADING", "%03.0f", 0.0, -0.30, 0.020, font_green)
+
+base_screen("DFD")
+
+local dfd = visible_root(nil, "PLT_DFD_PAGE", PAGE_FLT, true)
+draw_adi(dfd, 0.0, 0.05, 0.90, true)
+text(nil, "STBY FLT", 0.0, 0.34, 0.020, font_green, dfd)
+text(nil, "IAS", -0.34, 0.18, 0.014, font_dim, dfd)
+param_text(nil, "PILOT_IAS", "%03.0f", -0.28, 0.18, 0.018, font_white, dfd)
+text(nil, "ALT", 0.22, 0.18, 0.014, font_dim, dfd)
+param_text(nil, "PILOT_ALT", "%05.0f", 0.32, 0.18, 0.018, font_white, dfd)
+text(nil, "HDG", -0.07, -0.28, 0.014, font_dim, dfd)
+param_text(nil, "PILOT_HEADING", "%03.0f", 0.05, -0.28, 0.020, font_green, dfd)
+text(nil, "RAD", -0.34, -0.34, 0.014, font_dim, dfd)
+param_text(nil, "PILOT_RADALT", "%04.0f", -0.24, -0.34, 0.016, font_green, dfd)
+text(nil, "VS", 0.20, -0.34, 0.014, font_dim, dfd)
+param_text(nil, "PILOT_VVI", "%+.0f", 0.30, -0.34, 0.016, font_green, dfd)
