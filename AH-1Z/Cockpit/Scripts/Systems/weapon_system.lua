@@ -1,192 +1,138 @@
 dofile(LockOn_Options.script_path.."command_defs.lua")
 dofile(LockOn_Options.common_script_path.."devices_defs.lua")
 dofile(LockOn_Options.common_script_path.."../../../Database/wsTypes.lua")
-dofile(LockOn_Options.script_path.."utils.lua")
-dofile(LockOn_Options.script_path.."AI/AI_Gunners.lua")
+
 local dev = GetSelf()
-local update_rate = 0.01
+local update_rate = 0.02
 make_default_activity(update_rate)
 
-local StationSelect = 0
-local pickle_engaged = false
-local Selectweapon = 0
-local GunSelect = 0
-local ArmMaster =0
+local iCommandPlaneModeCannon = 113
+local iCommandPlaneFire = 84
+local iCommandPlaneFireOff = 85
+local iCommandPlanePickle = 350
+local iCommandPlanePickleOff = 351
 
+local WEAPON_CHIN = 0
+local WEAPON_ROCKETS = 1
+local WEAPON_MISSILES = 2
+local weapon_mode = WEAPON_CHIN
+local master_arm = 1
+local trigger_held = false
+local fire_timer = 0.0
+local fire_interval = 0.10
+local external_station_cursor = 0
+local external_station_order = {0, 1, 2, 3, 4, 5}
 
+local function set_arg(arg, value)
+    if set_cockpit_draw_argument_value then
+        set_cockpit_draw_argument_value(arg, value)
+    end
+end
 
-local sensor_data = get_base_data()
+local function publish()
+    set_arg(551, master_arm)
+    if weapon_mode == WEAPON_CHIN then
+        set_arg(552, -0.5)
+    elseif weapon_mode == WEAPON_ROCKETS then
+        set_arg(552, -1.0)
+    else
+        set_arg(552, 0.0)
+    end
+end
 
+local function station_has_weapon(idx)
+    if dev.get_station_info then
+        local ok, station = pcall(function() return dev:get_station_info(idx) end)
+        if ok and station and station.count and station.count > 0 then
+            return true
+        end
+    end
+    return false
+end
 
-elec_dc_ok  = get_param_handle("DC_POWER_AVAIL")
+local function fire_internal_gun()
+    if dispatch_action then
+        dispatch_action(nil, iCommandPlaneModeCannon)
+        dispatch_action(nil, iCommandPlaneFire)
+    end
+end
 
-dev:listen_command(Keys.GunSelector)
-dev:listen_command(Keys.MasterArm)
-dev:listen_command(Keys.ChangeWeapon)
-dev:listen_command(device_commands.MasterArm)
-dev:listen_command(device_commands.SalvoSw)
-dev:listen_command(device_commands.GunSelector)
-dev:listen_command(Keys.TriggerFireOn)
-dev:listen_command(Keys.TriggerFireOff)
-dev:listen_command(device_commands.MasterArm)
-dev:listen_command(device_commands.TroopAlarm)
-dev:listen_command(device_commands.TroopWarn)
+local function launch_external_store()
+    for _ = 1, #external_station_order do
+        local idx = external_station_order[external_station_cursor + 1]
+        external_station_cursor = (external_station_cursor + 1) % #external_station_order
 
-local iCommandPlaneDropFlareOnce = 357
-local iCommandPlaneDropChaffOnce = 358
-
-
-
-function post_initialize()
-
-    local birth = LockOn_Options.init_conditions.birth_place	--"GROUND_COLD","GROUND_HOT","AIR_HOT"
-    if birth=="GROUND_HOT" or birth=="AIR_HOT" then 	 
-        dev:performClickableAction(device_commands.MasterArm,1,true) 
-		
-    elseif birth=="GROUND_COLD" then
-        dev:performClickableAction(device_commands.MasterArm,0,true)
-
+        if station_has_weapon(idx) then
+            if dev.select_station then
+                pcall(function() dev:select_station(idx) end)
+            end
+            dev:launch_station(idx, 1)
+            if dispatch_action then
+                dispatch_action(nil, iCommandPlanePickle)
+            end
+            return
+        end
     end
 
+    if dispatch_action then
+        dispatch_action(nil, iCommandPlanePickle)
+    end
 end
 
+local function fire_selected_weapon()
+    if master_arm ~= 1 then
+        return
+    end
 
-
-local release_timer = 0
-local release_timer2 = 0
-local release_timer3 = 0
-local release_interval = 0.10 -- time between each shot rockets
-local release_interval2 = 0.30 -- time between each shot marines
-local release_interval3 = 2.0 -- time between each shot marine supplys
-local singleFired = 0
-local count = 0
-local count1 = 0
-
-function SetCommand(command,value)
-
-	local DOORGUNNERL = dev:get_station_info(5)
-	local DOORGUNNERR = dev:get_station_info(6)
-
-	ArmMaster = get_cockpit_draw_argument_value(551)
-	Selectweapon = get_cockpit_draw_argument_value(552)
-
-			
-	if command == device_commands.GunSelector then			
-		GunSelect = Selectweapon + 0.5
-	elseif command == Keys.GunSelector then
-		GunSelect = Selectweapon + 0.5
-		dev:performClickableAction(device_commands.GunSelector, (GunSelect),true)
-	end
-	
-	if Selectweapon == 1 and (command == Keys.GunSelector or command == device_commands.GunSelector) then 
-	GunSelect = -1
-	dev:performClickableAction(device_commands.GunSelector, (GunSelect),true)
-	end		
-	
-
-		
-    if command == Keys.TriggerFireOn and elec_dc_ok:get() == 1 and ArmMaster == 1 and Selectweapon == -1.0 then -- rockets
-			release_timer = release_timer + update_rate	
-		if release_timer >= release_interval then
-			dev:launch_station(2)
-			dev:launch_station(3)
-			release_timer = 0
-		end
-	end
-	
-   if 		command == Keys.TriggerFireOn and elec_dc_ok:get() == 1  and ArmMaster == 1 and Selectweapon == -0.5 then -- guns
-			dev:launch_station(0)
-			dev:launch_station(1)
-
-	end
-
-			if command == Keys.TriggerFireOn and elec_dc_ok:get() == 1  and ArmMaster == 1 and Selectweapon == 0.5 then -- grenade launcher / 2xM2s
-			dev:launch_station(4)
-
-	end
-	
-			if command == Keys.TriggerFireOn and elec_dc_ok:get() == 1 and ArmMaster == 1 and Selectweapon == 1.0 then -- Door guns
-	
-			dev:launch_station(5)
-			dev:launch_station(6)
-
-	end
-
-			if command == Keys.TriggerFireOn and elec_dc_ok:get() == 1 	and ArmMaster == 1 and Selectweapon == 0.0 then -- nothing
-
-	end
-	
-
-
-
+    if weapon_mode == WEAPON_CHIN then
+        fire_internal_gun()
+    else
+        launch_external_store()
+    end
 end
 
-
-
-
-	
-
---[[ bollox
- print_message_to_user("Chaff  "..Chaffcount)
-dev:drop_flare(1,1)
-dev:listen_command(Keys.CH47DropFlareOnce)
-dev:listen_command(Keys.CH47DropChaffOnce)		
-dev:listen_command(device_commands.MasterArmCMs)
-dev:listen_command(device_commands.ChaffSelector)
-dev:listen_command(device_commands.FlareSelector)
-	PlaneDropFlareOnce = 3571,
-	PlaneDropChaffOnce = 3581,
-	dev:set_ECM_status(true)
-	local Flarecount = dev:get_flare_count() --?????????????     
-local Chaffcount = dev:get_chaff_count()
-ECM_status = dev:get_ECM_status()
- print_message_to_user("Flares  "..Flarecount)
- print_message_to_user("Chaff  "..Chaffcount)
- 
- if ECM_status == true then
- 
- print_message_to_user("ECM_status  on")
-]]
-
-
-function update() 
-
-
-
+function post_initialize()
+    local birth = LockOn_Options.init_conditions.birth_place
+    master_arm = (birth == "GROUND_COLD") and 0 or 1
+    weapon_mode = WEAPON_CHIN
+    publish()
 end
 
-				
+function SetCommand(command, value)
+    if command == Keys.MasterArm then
+        master_arm = (master_arm == 1) and 0 or 1
+    elseif command == Keys.GunSelector or command == Keys.ChangeWeapon then
+        weapon_mode = (weapon_mode + 1) % 3
+    elseif command == Keys.SelectCannon then
+        weapon_mode = WEAPON_CHIN
+    elseif command == Keys.SelectTOW then
+        weapon_mode = WEAPON_MISSILES
+    elseif command == Keys.TriggerFireOn or command == Keys.PickleOn then
+        trigger_held = true
+        fire_timer = fire_interval
+        if command == Keys.PickleOn and weapon_mode == WEAPON_CHIN then
+            weapon_mode = WEAPON_ROCKETS
+        end
+    elseif command == Keys.TriggerFireOff or command == Keys.PickleOff then
+        trigger_held = false
+        if dispatch_action then
+            dispatch_action(nil, iCommandPlaneFireOff)
+            dispatch_action(nil, iCommandPlanePickleOff)
+        end
+    end
 
+    publish()
+end
 
+function update()
+    publish()
+    if trigger_held then
+        fire_timer = fire_timer + update_rate
+        if fire_timer >= fire_interval then
+            fire_selected_weapon()
+            fire_timer = 0.0
+        end
+    end
+end
 
-
-
-
-
-need_to_be_closed = false -- close lua state after initialization
-
-
---[[
-available functions:
-["get_station_info"] 
-["set_ECM_status"] 
-["get_ECM_status"]  
-["launch_station"] 
-["select_station"] 
-["emergency_jettison"]  
-["emergency_jettison_rack"] 
-["set_target_range"]  
-["set_target_span"]  
-["get_target_range"]  
-["get_target_span"]  
-["get_flare_count"]  
-["drop_flare"] 
-["get_chaff_count"] 
-["drop_chaff"] 
-
-["listen_event"]  
-["performClickableAction"] 
-["SetDamage"] 
-["listen_command"] 
-["SetCommand"] 
---]]
+need_to_be_closed = false

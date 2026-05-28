@@ -43,6 +43,7 @@ devices["FUEL"] 			= counter()
 devices["AH1Z_EFM_BRIDGE"] = counter()
 
 devices["WINDVANE"] = counter()
-devices["PILOT_MFD"] = counter()
+devices["PILOT_MFD"] = counter()
+devices["CHIN_TURRET"] = counter()
 
 

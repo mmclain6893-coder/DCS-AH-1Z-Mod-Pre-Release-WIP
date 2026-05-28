@@ -324,10 +324,10 @@ end
 -- ccIndicator pages and receives the clickable bezel/DFD button commands.
 creators[devices.PILOT_MFD] = {"avLuaDevice", LockOn_Options.script_path.."Systems/PilotMFD.lua"}
 
--- Safe standalone external animation driver for the AH-1Z chin gun. The full
--- inherited weapon stack stays isolated, but this device only listens to the
--- turret/HMD commands and writes external draw arguments.
-creators[devices.WEAPON_SYSTEM] = {"avLuaDevice", LockOn_Options.script_path.."Systems/ChinTurret.lua"}
+-- Safe standalone external animation driver for the AH-1Z chin gun. Weapon
+-- release stays on avSimpleWeaponSystem; this device only drives draw args.
+creators[devices.WEAPON_SYSTEM] = {"avSimpleWeaponSystem", LockOn_Options.script_path.."Systems/weapon_system.lua"}
+creators[devices.CHIN_TURRET] = {"avLuaDevice", LockOn_Options.script_path.."Systems/ChinTurret.lua"}
 
 
 
@@ -503,6 +503,7 @@ if AH1Z_VISUAL_ALIGN_MODE then
     local ah1z_safe_creators = {}
     ah1z_safe_creators[devices.PILOT_MFD] = creators[devices.PILOT_MFD]
     ah1z_safe_creators[devices.WEAPON_SYSTEM] = creators[devices.WEAPON_SYSTEM]
+    ah1z_safe_creators[devices.CHIN_TURRET] = creators[devices.CHIN_TURRET]
     creators = ah1z_safe_creators
 end
 
