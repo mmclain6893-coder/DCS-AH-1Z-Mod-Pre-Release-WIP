@@ -437,3 +437,18 @@ elements["ah_1z_forward_dfd_7_btn_static"] = default_button(_("DFD 7 BTN"), devi
 elements["ah_1z_forward_dfd_8_btn_static"] = default_button(_("DFD 8 BTN"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7174, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_dfd_9_btn_static"] = default_button(_("DFD 9 BTN"), devices.PILOT_MFD, device_commands.PilotDFDButton, 7175, AH1Z_MFD_BUTTON_SPEED)
 elements["ah_1z_forward_dfd_flt_btn_static"] = default_button(_("DFD FLT BTN"), devices.PILOT_MFD, device_commands.PilotDFDFLT, 7176, AH1Z_MFD_BUTTON_SPEED)
+
+-- The current cockpit EDM exports pilot MFD/DFD click connectors as
+-- al_ah_1z_forward_*_static. Keep the commands above readable, then bind the
+-- final element table to the connector names DCS can actually find.
+for connector, element in pairs(elements) do
+    if string.match(connector, "^ah_1z_forward_mfd_") or string.match(connector, "^ah_1z_forward_dfd_") then
+        local edm_connector = connector
+        if not string.match(edm_connector, "_static$") then
+            edm_connector = edm_connector .. "_static"
+        end
+        edm_connector = "al_" .. edm_connector
+        elements[edm_connector] = element
+        elements[connector] = nil
+    end
+end
