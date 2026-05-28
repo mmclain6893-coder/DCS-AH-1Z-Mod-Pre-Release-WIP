@@ -219,7 +219,7 @@ AH1Z =
             }
         ),
         pylon(2, 0, 0.20, -0.82, -2.25,
-            {arg = 422, arg_value = 0.0, use_full_connector_position = false, DisplayName = "L OUT"},
+            {arg = 422, arg_value = 0.0, use_full_connector_position = false, DisplayName = "L OUT", FiY = -90.0},
             {
                 {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0}, -- DCS M299 4x AGM-114K
                 {CLSID = "{M299_4xAGM_114L}", arg_value = 1.0}, -- DCS M299 4x AGM-114L
@@ -229,7 +229,7 @@ AH1Z =
             }
         ),
         pylon(3, 0, -0.55, -0.82, -1.55,
-            {arg = 423, arg_value = 0.0, use_full_connector_position = false, DisplayName = "L IN"},
+            {arg = 423, arg_value = 0.0, use_full_connector_position = false, DisplayName = "L IN", FiY = -90.0},
             {
                 {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0},
                 {CLSID = "{M299_4xAGM_114L}", arg_value = 1.0},
@@ -239,7 +239,7 @@ AH1Z =
             }
         ),
         pylon(4, 0, -0.55, -0.82, 1.55,
-            {arg = 424, arg_value = 0.0, use_full_connector_position = false, DisplayName = "R IN"},
+            {arg = 424, arg_value = 0.0, use_full_connector_position = false, DisplayName = "R IN", FiY = -90.0},
             {
                 {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0},
                 {CLSID = "{M299_4xAGM_114L}", arg_value = 1.0},
@@ -249,7 +249,7 @@ AH1Z =
             }
         ),
         pylon(5, 0, 0.20, -0.82, 2.25,
-            {arg = 425, arg_value = 0.0, use_full_connector_position = false, DisplayName = "R OUT"},
+            {arg = 425, arg_value = 0.0, use_full_connector_position = false, DisplayName = "R OUT", FiY = -90.0},
             {
                 {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0},
                 {CLSID = "{M299_4xAGM_114L}", arg_value = 1.0},
