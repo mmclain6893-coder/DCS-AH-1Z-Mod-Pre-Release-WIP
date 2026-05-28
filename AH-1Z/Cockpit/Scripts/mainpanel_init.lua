@@ -3,7 +3,7 @@ shape_name = "AH-1Z_Cockpit"
 is_EDM = true
 new_shape = true 
 new_model_format = true
-cockpit_local_point = {5.70, 1.20, 0.00}
+cockpit_local_point = {5.70, 1.20, 3.05}
 new_infrared_debug = true
 
 draw_old_cockpit = false
@@ -47,6 +47,25 @@ seat_points =
 
 
 local controllers = LoRegisterPanelControls()
+
+local function CreateConnectedGauge(external_arg, arg, input, output)
+    local gauge = CreateGauge("external_arg")
+    gauge.external_arg = external_arg
+    gauge.arg_number = arg
+    gauge.input = input
+    gauge.output = output
+    return gauge
+end
+
+local function CreateSimpleConnectedGauge(external_arg, arg)
+    return CreateConnectedGauge(external_arg, arg, {-1.0, 1.0}, {-1.0, 1.0})
+end
+
+-- Mirrors the DCS head tracking args into cockpit args the turret/HMD device can read.
+PLT_HeadTurnAz = CreateSimpleConnectedGauge(39, 890)
+PLT_HeadTurnEl = CreateSimpleConnectedGauge(99, 891)
+CPG_HeadTurnAz = CreateSimpleConnectedGauge(337, 892)
+CPG_HeadTurnEl = CreateSimpleConnectedGauge(399, 893)
 
 --collision shake
 Panel_Shake_Z  				= CreateGauge()

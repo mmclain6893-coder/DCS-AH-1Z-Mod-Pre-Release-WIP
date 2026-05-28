@@ -42,7 +42,9 @@ SH3SeaKing = {
     -- Slightly below the previous UH value to resist skid roll-over while we
     -- are using DCS wheel-style contact for skid rails.
     center_of_mass = {0.20, -0.35, 0.0},
-    moment_of_inertia = {245000, 90000, 105000},
+    -- AH-1Z first-pass inertia estimate, kg*m^2. DCS body axes:
+    -- X roll, Y yaw, Z pitch. This replaces the borrowed heavy-helo values.
+    moment_of_inertia = {65000, 230000, 210000},
 
     -- Reference layout: wheel shells plus gear collision lines.
     -- DCS body axes: X fore/aft, Y vertical, Z lateral.

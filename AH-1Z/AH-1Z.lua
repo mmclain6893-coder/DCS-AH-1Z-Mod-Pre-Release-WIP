@@ -49,7 +49,9 @@ AH1Z =
     M_max = 8391,
     M_fuel_max = 1254,
     M_payload_max = 2614,
-    MOI = {245000, 90000, 105000},
+    -- First-pass inertia estimate from AH-1Z mass and dimensions.
+    -- Axes are DCS body axes: X roll, Y yaw, Z pitch.
+    MOI = {65000, 230000, 210000},
     RCS = 7,
     IR_emission_coeff = 0.35,
 
@@ -68,16 +70,16 @@ AH1Z =
         { engine_number = 2, pos = {-1.0, 1.7,  0.55}, diameter = 0.45, smokiness_level = 0.05 },
     },
 
-    V_max = 200 * knot_to_kmh,
-    V_max_cruise = 139 * knot_to_kmh,
+    V_max = 222 * knot_to_kmh,
+    V_max_cruise = 160 * knot_to_kmh,
     V_sideward_rearward = 45 * knot_to_kmh,
     Vy_max = 14.2,
     H_stat_max = 914,
     H_stat_max_L = 2150,
     H_din_two_eng = 3840,
     H_din_one_eng = 1900,
-    range = 310 * nm_to_km,
-    combat_radius = 131 * nm_to_km,
+    range = 370 * nm_to_km,
+    combat_radius = 125 * nm_to_km,
     flight_time_typical = 150,
     flight_time_maximum = 180,
     Vy_land_max = 12.8,
@@ -86,7 +88,7 @@ AH1Z =
     scheme = 0,
 
     rotor_height = 2.091,
-    rotor_diameter = 13.4,
+    rotor_diameter = 15.0,
     blade_chord = 0.534,
     blade_area = 6.2,
     blades_number = 4,

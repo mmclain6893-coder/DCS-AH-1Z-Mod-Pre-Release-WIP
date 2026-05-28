@@ -324,6 +324,11 @@ end
 -- ccIndicator pages and receives the clickable bezel/DFD button commands.
 creators[devices.PILOT_MFD] = {"avLuaDevice", LockOn_Options.script_path.."Systems/PilotMFD.lua"}
 
+-- Safe standalone external animation driver for the AH-1Z chin gun. The full
+-- inherited weapon stack stays isolated, but this device only listens to the
+-- turret/HMD commands and writes external draw arguments.
+creators[devices.WEAPON_SYSTEM] = {"avLuaDevice", LockOn_Options.script_path.."Systems/ChinTurret.lua"}
+
 
 
 
@@ -347,6 +352,8 @@ indicators[#indicators + 1] = {"ccIndicator", LockOn_Options.script_path.."Pilot
 
 
 indicators[#indicators + 1] = {"ccIndicator", LockOn_Options.script_path.."PilotMFD/indicator/plt_dfd_init.lua", nil, {{"PLT_DFD_CENTER", "PLT_DFD_DOWN", "PLT_DFD_RIGHT"}, {rz = 0}, 1}, 1}
+
+indicators[#indicators + 1] = {"ccIndicator", LockOn_Options.script_path.."HMD/indicator/HMD_init.lua", nil}
 
 
 
@@ -490,11 +497,12 @@ dofile(LockOn_Options.common_script_path.."KNEEBOARD/declare_kneeboard_device.lu
 
 
 -- CTD isolation: keep the inherited Lua cockpit devices off, but allow the
--- purpose-built AH-1Z pilot MFCD device to drive live display parameters and
--- receive clickable bezel/DFD button commands.
+-- purpose-built AH-1Z pilot MFCD and chin/HMD cue devices to drive live
+-- display/external animation parameters.
 if AH1Z_VISUAL_ALIGN_MODE then
     local ah1z_safe_creators = {}
     ah1z_safe_creators[devices.PILOT_MFD] = creators[devices.PILOT_MFD]
+    ah1z_safe_creators[devices.WEAPON_SYSTEM] = creators[devices.WEAPON_SYSTEM]
     creators = ah1z_safe_creators
 end
 
