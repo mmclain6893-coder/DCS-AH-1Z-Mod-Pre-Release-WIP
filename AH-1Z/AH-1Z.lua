@@ -221,47 +221,41 @@ AH1Z =
         pylon(2, 0, 0.20, -0.82, -2.25,
             {arg = 422, arg_value = 0.0, use_full_connector_position = false, DisplayName = "L OUT"},
             {
-                {CLSID = "{FD90A1DC-9147-49FA-BF56-CB83EF0BD32B}", arg_value = 1.0},
-                {CLSID = "{M299_3xAGM_114K_OUTBOARD_PORT}", arg_value = 1.0},
-                {CLSID = "{M299_2xAGM_114K}", arg_value = 1.0},
-                {CLSID = "{M299_1xAGM_114K_OUTBOARD_PORT}", arg_value = 1.0},
-                {CLSID = "{M299_3xAGM_114L_OUTBOARD_PORT}", arg_value = 1.0},
-                {CLSID = "{M299_2xAGM_114L}", arg_value = 1.0},
-                {CLSID = "{M299_1xAGM_114L_OUTBOARD_PORT}", arg_value = 1.0},
-                {CLSID = "{AH1W_2xBGM_71_TOW_L}", arg_value = 1.0},
-                {CLSID = "{M3RocketPodL}", arg_value = 1.0},
+                {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0}, -- DCS M299 4x AGM-114K
+                {CLSID = "{M299_4xAGM_114L}", arg_value = 1.0}, -- DCS M299 4x AGM-114L
+                {CLSID = "M261_MK151", arg_value = 1.0}, -- DCS M261 19x Hydra M151
+                {CLSID = "{M261_M257}", arg_value = 1.0}, -- DCS M261 19x Hydra M257
+                {CLSID = "{M261_M274}", arg_value = 1.0}, -- DCS M261 19x Hydra M274
             }
         ),
         pylon(3, 0, -0.55, -0.82, -1.55,
             {arg = 423, arg_value = 0.0, use_full_connector_position = false, DisplayName = "L IN"},
             {
-                {CLSID = "{FD90A1DC-9147-49FA-BF56-CB83EF0BD32B}", arg_value = 1.0},
-                {CLSID = "{M299_2xAGM_114K}", arg_value = 1.0},
-                {CLSID = "{M299_2xAGM_114L}", arg_value = 1.0},
-                {CLSID = "{M3RocketPodL}", arg_value = 1.0},
+                {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0},
+                {CLSID = "{M299_4xAGM_114L}", arg_value = 1.0},
+                {CLSID = "M261_MK151", arg_value = 1.0},
+                {CLSID = "{M261_M257}", arg_value = 1.0},
+                {CLSID = "{M261_M274}", arg_value = 1.0},
             }
         ),
         pylon(4, 0, -0.55, -0.82, 1.55,
             {arg = 424, arg_value = 0.0, use_full_connector_position = false, DisplayName = "R IN"},
             {
-                {CLSID = "{FD90A1DC-9147-49FA-BF56-CB83EF0BD32B}", arg_value = 1.0},
-                {CLSID = "{M299_2xAGM_114K}", arg_value = 1.0},
-                {CLSID = "{M299_2xAGM_114L}", arg_value = 1.0},
-                {CLSID = "{M3RocketPodR}", arg_value = 1.0},
+                {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0},
+                {CLSID = "{M299_4xAGM_114L}", arg_value = 1.0},
+                {CLSID = "M261_MK151", arg_value = 1.0},
+                {CLSID = "{M261_M257}", arg_value = 1.0},
+                {CLSID = "{M261_M274}", arg_value = 1.0},
             }
         ),
         pylon(5, 0, 0.20, -0.82, 2.25,
             {arg = 425, arg_value = 0.0, use_full_connector_position = false, DisplayName = "R OUT"},
             {
-                {CLSID = "{FD90A1DC-9147-49FA-BF56-CB83EF0BD32B}", arg_value = 1.0},
-                {CLSID = "{M299_3xAGM_114K_OUTBOARD_STARBOARD}", arg_value = 1.0},
-                {CLSID = "{M299_2xAGM_114K}", arg_value = 1.0},
-                {CLSID = "{M299_1xAGM_114K_OUTBOARD_STARBOARD}", arg_value = 1.0},
-                {CLSID = "{M299_3xAGM_114L_OUTBOARD_STARBOARD}", arg_value = 1.0},
-                {CLSID = "{M299_2xAGM_114L}", arg_value = 1.0},
-                {CLSID = "{M299_1xAGM_114L_OUTBOARD_STARBOARD}", arg_value = 1.0},
-                {CLSID = "{AH1W_2xBGM_71_TOW_R}", arg_value = 1.0},
-                {CLSID = "{M3RocketPodR}", arg_value = 1.0},
+                {CLSID = "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}", arg_value = 1.0},
+                {CLSID = "{M299_4xAGM_114L}", arg_value = 1.0},
+                {CLSID = "M261_MK151", arg_value = 1.0},
+                {CLSID = "{M261_M257}", arg_value = 1.0},
+                {CLSID = "{M261_M274}", arg_value = 1.0},
             }
         ),
         pylon(6, 0, 1.25, -0.82, 2.85,

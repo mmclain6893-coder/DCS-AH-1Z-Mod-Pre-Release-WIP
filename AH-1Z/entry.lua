@@ -58,8 +58,6 @@ mount_vfs_texture_path(current_mod_path .. "/Textures")
 mount_vfs_texture_path(current_mod_path .. "/Shapes/Textures")
 mount_vfs_texture_path(current_mod_path .. "/Cockpit/IndicatorTextures")
 
-dofile(current_mod_path .. "/Weapons/UH1M_Weapons.lua")
-dofile(current_mod_path .. "/Weapons/Weapons_Rocket.lua")
 dofile(current_mod_path .. "/AH-1Z.lua")
 dofile(current_mod_path .. "/Views.lua")
 make_view_settings("AH-1Z", ViewSettings, SnapViews)
