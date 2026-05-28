@@ -181,6 +181,16 @@ AH1Z =
     -- Rotor, chin turret, sensor ball, and wind sensor draw args.
     net_animation = {20, 21, 22, 24, 25, 26, 27, 36, 37, 40},
     mechanimations = {},
+    cannon_sight_type = 2,
+    turret_data =
+    {
+        H_Min = -110.0,
+        H_Max = 110.0,
+        V_Min = -50.0,
+        V_Max = 25.0,
+        H_Vel = 90.0,
+        V_Vel = 90.0,
+    },
     Guns =
     {
         -- M197 is a 20 mm Vulcan-family cannon; DCS exposes the M_61 template.
