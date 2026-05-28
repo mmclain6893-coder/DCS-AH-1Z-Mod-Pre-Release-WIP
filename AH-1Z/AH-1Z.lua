@@ -187,9 +187,10 @@ AH1Z =
         gun_mount("M_61",
             { count = 750 },
             {
-                muzzle_pos = {3.35, -1.15, 0.0},
+                muzzle_pos = {0.0, 0.0, 0.0},
+                muzzle_pos_connector = "Gun_point_00",
                 supply_position = {2.10, -0.25, 0.0},
-                azimuth_initial = 90.0,
+                azimuth_initial = 0.0,
                 elevation_initial = 0.0,
                 max_burst_length = 750,
                 rates = {730},
