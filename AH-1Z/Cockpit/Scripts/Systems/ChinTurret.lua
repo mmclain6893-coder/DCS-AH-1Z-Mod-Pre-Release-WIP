@@ -60,10 +60,10 @@ local function get_eye_reticle_target()
     local cpg_pitch = get_arg(893)
 
     if math.abs(cpg_yaw) + math.abs(cpg_pitch) > math.abs(plt_yaw) + math.abs(plt_pitch) + 0.01 then
-        return clamp(cpg_yaw, -1.0, 1.0), clamp(cpg_pitch, -0.8, 0.4)
+        return clamp(-cpg_yaw, -1.0, 1.0), clamp(cpg_pitch, -0.8, 0.4)
     end
 
-    return clamp(plt_yaw, -1.0, 1.0), clamp(plt_pitch, -0.8, 0.4)
+    return clamp(-plt_yaw, -1.0, 1.0), clamp(plt_pitch, -0.8, 0.4)
 end
 
 local function publish()

@@ -23,6 +23,16 @@ local fire_interval = 0.10
 local external_station_cursor = 0
 local external_station_order = {0, 1, 2, 3, 4, 5}
 
+dev:listen_command(Keys.MasterArm)
+dev:listen_command(Keys.GunSelector)
+dev:listen_command(Keys.ChangeWeapon)
+dev:listen_command(Keys.SelectCannon)
+dev:listen_command(Keys.SelectTOW)
+dev:listen_command(Keys.TriggerFireOn)
+dev:listen_command(Keys.TriggerFireOff)
+dev:listen_command(Keys.PickleOn)
+dev:listen_command(Keys.PickleOff)
+
 local function set_arg(arg, value)
     if set_cockpit_draw_argument_value then
         set_cockpit_draw_argument_value(arg, value)
