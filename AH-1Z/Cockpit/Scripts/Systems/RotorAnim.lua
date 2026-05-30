@@ -44,13 +44,13 @@ local function read_cockpit_throttle()
     return 0.0
 end
 
-local function advance_bipolar_arg(value, rate)
+local function advance01(value, rate)
     value = value + rate * update_time_step
     while value > 1.0 do
-        value = value - 2.0
+        value = value - 1.0
     end
-    while value < -1.0 do
-        value = value + 2.0
+    while value < 0.0 do
+        value = value + 1.0
     end
     return value
 end
@@ -71,13 +71,17 @@ function update()
     if response > 1.0 then response = 1.0 end
     rotor_spool = rotor_spool + (target - rotor_spool) * response
 
-    local main_rate = 0.25 + 5.60 * rotor_spool
-    local tail_rate = 1.00 + 22.40 * rotor_spool
+    -- Match the AH1Z_FM draw-arg logic: 324 rpm = 5.4 rev/sec, with the
+    -- exported EDM animation using 4 cycles per main-rotor revolution and
+    -- 20 cycles per tail-rotor revolution.
+    local main_rate = 21.60 * rotor_spool
+    local tail_rate = 108.00 * rotor_spool
 
-    main_arg = advance_bipolar_arg(main_arg, main_rate)
-    tail_arg = advance_bipolar_arg(tail_arg, tail_rate)
+    main_arg = advance01(main_arg, main_rate)
+    tail_arg = advance01(tail_arg, tail_rate)
 
     set_aircraft_draw_argument_value(36, main_arg)
+    set_aircraft_draw_argument_value(37, main_arg)
     set_aircraft_draw_argument_value(40, tail_arg)
 end
 

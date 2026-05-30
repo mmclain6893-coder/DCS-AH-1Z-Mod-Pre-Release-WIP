@@ -104,7 +104,7 @@ keyCommands = {
 	
 	
 --{combos = {{key = 'L', reformers = {'RWin'}}},   down =  Keys.PlaneRotorTipLights, name = _('Lights rotor tip'), category = _('Lighting')},
---{combos = {{key = 'L', reformers = {'Lwin'}}},  down =   Keys.PlaneFormationLights, name  =  _('Lights formation 10\%/30\%/100\%/Off'), category = _('Lighting')},
+--{combos = {{key = 'L', reformers = {'Lwin'}}},  down =   Keys.PlaneFormationLights, name  =  _('Lights formation 10%/30%/100%/Off'), category = _('Lighting')},
 
 
 --autopilot

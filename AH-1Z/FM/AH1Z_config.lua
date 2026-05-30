@@ -8,24 +8,24 @@ local function skid_post(pos, shell, damage_element, arg_amortizer, mass, static
         self_attitude = false,
         wheel_axle_offset = 0.0,
         yaw_limit = 0.0,
-        damper_coeff = 320.0,
+        damper_coeff = 260.0,
 
-        amortizer_max_length = 0.30,
-        amortizer_basic_length = 0.30,
-        amortizer_spring_force_factor = 1250000.0,
+        amortizer_max_length = 0.42,
+        amortizer_basic_length = 0.42,
+        amortizer_spring_force_factor = 900000.0,
         amortizer_spring_force_factor_rate = 1,
         amortizer_static_force = static_force,
-        amortizer_reduce_length = 0.20,
-        amortizer_direct_damper_force_factor = 125000.0,
-        amortizer_back_damper_force_factor = 145000.0,
+        amortizer_reduce_length = 0.26,
+        amortizer_direct_damper_force_factor = 110000.0,
+        amortizer_back_damper_force_factor = 135000.0,
 
-        allowable_hard_contact_length = 0.35,
+        allowable_hard_contact_length = 0.46,
         anti_skid_installed = false,
-        wheel_radius = 0.10,
-        wheel_static_friction_factor = 1.20,
-        wheel_side_friction_factor = 1.60,
-        wheel_roll_friction_factor = 0.45,
-        wheel_glide_friction_factor = 1.05,
+        wheel_radius = 0.09,
+        wheel_static_friction_factor = 1.65,
+        wheel_side_friction_factor = 2.10,
+        wheel_roll_friction_factor = 0.60,
+        wheel_glide_friction_factor = 1.35,
         wheel_damage_force_factor = 1450.0,
         wheel_damage_speed = 180,
         wheel_moment_of_inertia = 0.25,
@@ -39,19 +39,25 @@ local function skid_post(pos, shell, damage_element, arg_amortizer, mass, static
 end
 
 SH3SeaKing = {
-    -- Slightly below the previous UH value to resist skid roll-over while we
-    -- are using DCS wheel-style contact for skid rails.
-    center_of_mass = {0.20, -0.35, 0.0},
-    -- AH-1Z first-pass inertia estimate, kg*m^2. DCS body axes:
-    -- X roll, Y yaw, Z pitch. This replaces the borrowed heavy-helo values.
-    moment_of_inertia = {65000, 230000, 210000},
+    -- AH-1Z/Viper baseline from the supplied MSFS flight_model.cfg.
+    -- Source values:
+    --   empty 12,300 lb, max 18,500 lb
+    --   empty CG -7, 0, 0 ft from datum
+    --   MOI pitch/roll/yaw 20938/38638/59573 slug-ft^2
+    --
+    -- DCS body axes are X forward, Y up, Z right. The EFM receives these
+    -- values through make_flyable() and ed_fm_set_current_mass_state().
+    center_of_mass = {-2.13, -0.08, 0.00},
+    moment_of_inertia = {52394, 80765, 28386},
 
-    -- Reference layout: wheel shells plus gear collision lines.
+    -- Supplied skid geometry mapped from feet to DCS meters.
     -- DCS body axes: X fore/aft, Y vertical, Z lateral.
     suspension = {
-        skid_post({ 2.85, -2.449,  0.00}, "WHEEL_F", 0, 2, 60, 16000.0),
-        skid_post({-0.80, -2.449,  1.35}, "WHEEL_L", 3, 6, 120, 25700.0),
-        skid_post({-0.80, -2.449, -1.35}, "WHEEL_R", 3, 4, 120, 25700.0),
+        skid_post({-0.37, -2.402,  1.10}, "WHEEL_L_F", 3, 6, 80, 18500.0),
+        skid_post({-0.37, -2.402, -1.10}, "WHEEL_R_F", 3, 4, 80, 18500.0),
+        skid_post({-3.05, -2.402,  1.10}, "WHEEL_L_R", 3, 6, 110, 25500.0),
+        skid_post({-3.05, -2.402, -1.10}, "WHEEL_R_R", 3, 4, 110, 25500.0),
+        skid_post({-10.97, -1.433, 0.00}, "TAILBOOM", 2, -1, 50, 5000.0),
     },
 
     disable_built_in_oxygen_system = false,

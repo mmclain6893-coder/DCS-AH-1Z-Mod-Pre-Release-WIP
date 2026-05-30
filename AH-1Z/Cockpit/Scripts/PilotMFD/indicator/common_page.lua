@@ -117,8 +117,8 @@ function base_screen(title)
 end
 
 function page_tabs(parent, active_label)
-    local labels = {"FLT", "WPN", "TSD", "SYS", "COM"}
-    local xs = {-0.32, -0.16, 0.0, 0.16, 0.32}
+    local labels = {"FLT", "WPN", "TSD", "TSS", "SYS", "COM"}
+    local xs = {-0.35, -0.21, -0.07, 0.07, 0.21, 0.35}
     for i = 1, #labels do
         local mat = labels[i] == active_label and font_white or font_dim
         text(nil, labels[i], xs[i], -0.405, 0.015, mat, parent)
@@ -213,11 +213,13 @@ function draw_weapon_page(parent)
         text(nil, tostring(math.abs(i) + 1), x, -0.04, 0.014, font_dim, parent)
     end
 
-    text(nil, "TURRET", -0.24, -0.14, 0.016, font_dim, parent)
+    text(nil, "HMD/TURRET", -0.24, -0.14, 0.016, font_dim, parent)
     text(nil, "AZ", -0.34, -0.20, 0.014, font_dim, parent)
     param_text(nil, "AH1Z_CHIN_TURRET_YAW", "%+.2f", -0.25, -0.20, 0.017, font_green, parent)
     text(nil, "EL", -0.05, -0.20, 0.014, font_dim, parent)
     param_text(nil, "AH1Z_CHIN_TURRET_PITCH", "%+.2f", 0.05, -0.20, 0.017, font_green, parent)
+    text(nil, "LOS", 0.27, -0.20, 0.014, font_dim, parent)
+    draw_box(parent, 0.33, -0.20, 0.055, 0.055, mat_green)
 
     local trig = param_visible_root(nil, "AH1Z_TRIGGER_HELD", 0.9, 1.1, parent)
     text(nil, "TRIG", 0.28, -0.16, 0.018, font_red, trig)
@@ -266,20 +268,37 @@ end
 
 function draw_tss_page(parent)
     page_tabs(parent, "TSS")
-    text(nil, "TSS", 0.0, 0.35, 0.022, font_green, parent)
-    draw_box(parent, 0, 0.02, 0.58, 0.52, mat_green_dim)
-    draw_cross(parent, 0, 0.02, 0.06, mat_green_dim)
+    text(nil, "TSS / HMD LOS", 0.0, 0.35, 0.020, font_green, parent)
+    rect(nil, 0.0, 0.02, 0.62, 0.54, mat_grey, parent)
+    draw_box(parent, 0, 0.02, 0.62, 0.54, mat_green_dim)
+    line(nil, -0.31, 0.02, 0.31, 0.02, 0.0017, mat_green_dim, parent)
+    line(nil, 0.0, -0.25, 0.0, 0.29, 0.0017, mat_green_dim, parent)
+    draw_cross(parent, 0, 0.02, 0.045, mat_green_dim)
+
     local aim = CreateElement "ceSimple"
     aim.name = create_guid_string()
     aim.parent_element = parent
     aim.element_params = {"AH1Z_EYE_RETICLE_YAW", "AH1Z_EYE_RETICLE_PITCH"}
-    aim.controllers = {{"move_left_right_using_parameter", 0, 0.22}, {"move_up_down_using_parameter", 1, 0.22}}
+    aim.controllers = {{"move_left_right_using_parameter", 0, 0.25}, {"move_up_down_using_parameter", 1, 0.25}}
     Add(aim)
-    draw_box(aim.name, 0, 0, 0.15, 0.15, mat_green)
-    draw_cross(aim.name, 0, 0, 0.04, mat_green)
-    text(nil, "LOS", -0.28, -0.30, 0.016, font_dim, parent)
-    param_text(nil, "AH1Z_CHIN_TURRET_YAW", "AZ %+.2f", -0.12, -0.30, 0.016, font_green, parent)
-    param_text(nil, "AH1Z_CHIN_TURRET_PITCH", "EL %+.2f", 0.16, -0.30, 0.016, font_green, parent)
+
+    draw_box(aim.name, 0, 0, 0.18, 0.18, mat_green)
+    line(nil, -0.12, 0, -0.04, 0, 0.003, mat_green, aim.name)
+    line(nil, 0.04, 0, 0.12, 0, 0.003, mat_green, aim.name)
+    line(nil, 0, -0.12, 0, -0.04, 0.003, mat_green, aim.name)
+    line(nil, 0, 0.04, 0, 0.12, 0.003, mat_green, aim.name)
+
+    text(nil, "HMD", -0.28, 0.285, 0.014, font_dim, parent)
+    param_text(nil, "AH1Z_EYE_RETICLE_YAW", "Y %+.2f", -0.18, 0.285, 0.014, font_green, parent)
+    param_text(nil, "AH1Z_EYE_RETICLE_PITCH", "P %+.2f", 0.02, 0.285, 0.014, font_green, parent)
+    text(nil, "TURRET", -0.28, -0.30, 0.014, font_dim, parent)
+    param_text(nil, "AH1Z_CHIN_TURRET_YAW", "AZ %+.2f", -0.10, -0.30, 0.015, font_green, parent)
+    param_text(nil, "AH1Z_CHIN_TURRET_PITCH", "EL %+.2f", 0.17, -0.30, 0.015, font_green, parent)
+
+    local arm = param_visible_root(nil, "AH1Z_MASTER_ARM", 0.9, 1.1, parent)
+    local safe = param_visible_root(nil, "AH1Z_MASTER_ARM", -0.1, 0.1, parent)
+    text(nil, "ARM", 0.27, 0.285, 0.015, font_red, arm)
+    text(nil, "SAFE", 0.27, 0.285, 0.015, font_dim, safe)
 end
 
 function draw_wca_page(parent)

@@ -42,16 +42,17 @@ AH1Z =
 
     length = 17.75,
     height = 4.37,
-    rotor_RPM = 324,
-    tail_rotor_RPM = 1403,
+    rotor_RPM = 315,
+    tail_rotor_RPM = 1300,
     M_empty = 5579,
     M_nominal = 6875,
     M_max = 8391,
     M_fuel_max = 1254,
     M_payload_max = 2614,
-    -- First-pass inertia estimate from AH-1Z mass and dimensions.
-    -- Axes are DCS body axes: X roll, Y yaw, Z pitch.
-    MOI = {65000, 230000, 210000},
+    -- Direct conversion from supplied AH-1Z/Viper MSFS inertia data.
+    -- MSFS file comments label pitch/roll/yaw as Jxx/Jzz/Jyy respectively;
+    -- DCS body axes are X roll, Y yaw, Z pitch.
+    MOI = {52394, 80765, 28386},
     RCS = 7,
     IR_emission_coeff = 0.35,
 
@@ -92,7 +93,7 @@ AH1Z =
     blade_chord = 0.534,
     blade_area = 6.2,
     blades_number = 4,
-    rotor_MOI = 3000,
+    rotor_MOI = 3300,
     thrust_correction = 0.85,
     fuselage_Cxa0 = 0.47,
     fuselage_Cxa90 = 5.9,
@@ -181,16 +182,6 @@ AH1Z =
     -- Rotor, chin turret, sensor ball, and wind sensor draw args.
     net_animation = {20, 21, 22, 24, 25, 26, 27, 36, 37, 40},
     mechanimations = {},
-    cannon_sight_type = 2,
-    turret_data =
-    {
-        H_Min = -110.0,
-        H_Max = 110.0,
-        V_Min = -50.0,
-        V_Max = 25.0,
-        H_Vel = 90.0,
-        V_Vel = 90.0,
-    },
     Guns =
     {
         -- M197 is a 20 mm Vulcan-family cannon; DCS exposes the M_61 template.

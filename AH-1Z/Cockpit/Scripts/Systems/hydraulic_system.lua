@@ -76,8 +76,8 @@ update_landinggearlight()
 
 	local RPM1 = sensor_data.getEngineLeftRPM()
 	local RPM2 = sensor_data.getEngineRightRPM()
-	local aileron_command = sensor_data.getStickPitchPosition()/100
-	local stablisator_command = sensor_data.getStickRollPosition()/100
+	local aileron_command = sensor_data.getStickRollPosition()/100
+	local stablisator_command = sensor_data.getStickPitchPosition()/100
 	local rudder_command = -1*sensor_data.getRudderPosition()/100
 	local Servo1 = 0
 	local Servo2 = 0

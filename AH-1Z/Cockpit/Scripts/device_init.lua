@@ -299,15 +299,8 @@ end
 
 
 
--- Rotor args 36/40 are driven by AH1Z_FM.dll, same pattern as UH-1M's EFM
-
-
-
--- driven rotor argument. The AH-1Z bridge is kept on disk for diagnostics but
-
-
-
--- is only enabled while visual-alignment mode suppresses the full UH-1M stack.
+-- Rotor animation is left to the active FM DLL. A Lua rotor override fights
+-- the UH1M donor DLL's draw-arg writes and breaks the visible main rotor.
 
 
 
@@ -328,6 +321,7 @@ creators[devices.PILOT_MFD] = {"avLuaDevice", LockOn_Options.script_path.."Syste
 -- release stays on avSimpleWeaponSystem; this device only drives draw args.
 creators[devices.WEAPON_SYSTEM] = {"avSimpleWeaponSystem", LockOn_Options.script_path.."Systems/weapon_system.lua"}
 creators[devices.CHIN_TURRET] = {"avLuaDevice", LockOn_Options.script_path.."Systems/ChinTurret.lua"}
+creators[devices.ROTOR_ANIM] = {"avLuaDevice", LockOn_Options.script_path.."Systems/RotorAnim.lua"}
 
 
 
@@ -504,6 +498,7 @@ if AH1Z_VISUAL_ALIGN_MODE then
     ah1z_safe_creators[devices.PILOT_MFD] = creators[devices.PILOT_MFD]
     ah1z_safe_creators[devices.WEAPON_SYSTEM] = creators[devices.WEAPON_SYSTEM]
     ah1z_safe_creators[devices.CHIN_TURRET] = creators[devices.CHIN_TURRET]
+    ah1z_safe_creators[devices.ROTOR_ANIM] = creators[devices.ROTOR_ANIM]
     creators = ah1z_safe_creators
 end
 

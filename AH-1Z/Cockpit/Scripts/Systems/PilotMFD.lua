@@ -41,7 +41,7 @@ local reticle_pitch = get_param_handle("AH1Z_EYE_RETICLE_PITCH")
 power:set(1.0)
 brightness:set(1.0)
 left_page:set(PAGE_FLT)
-right_page:set(PAGE_WPN)
+right_page:set(PAGE_TSS)
 dfd_page:set(1)
 button_flash:set(0.0)
 
@@ -115,7 +115,7 @@ function post_initialize()
     power:set(1.0)
     brightness:set(1.0)
     left_page:set(PAGE_FLT)
-    right_page:set(PAGE_WPN)
+    right_page:set(PAGE_TSS)
     dfd_page:set(1)
 end
 

@@ -22,12 +22,12 @@ local pedals = get_param_handle("PEDAL_INPUT")
 
 function update()
 
-	local ROLL_STATE = sensor_data:getStickPitchPosition() / 100
+	local ROLL_STATE = sensor_data:getStickRollPosition() / 100
 	set_aircraft_draw_argument_value(11, ROLL_STATE) -- right aileron
 	set_aircraft_draw_argument_value(12, -ROLL_STATE) -- left aileron
 	
 
-	local PITCH_STATE = sensor_data:getStickRollPosition() / 100
+	local PITCH_STATE = sensor_data:getStickPitchPosition() / 100
 	set_aircraft_draw_argument_value(15, PITCH_STATE) -- right elevator
 	set_aircraft_draw_argument_value(16, PITCH_STATE) -- left elevator
 

@@ -78,7 +78,7 @@ keyCommands = {
 	{down = 3256, cockpit_device_id  = 0,	value_down = 1.0,	name = _('Flashlight'),	category = _('Lighting')},
 
 {down =  Keys.PlaneRotorTipLights, name = _('Lights rotor tip'), category = _('Ins Wall panel')},
-{down =   Keys.PlaneFormationLights , name  =  _('Lights formation 10\%/30\%/100\%/Off'), category = _('Ins Wall panel')},
+{down =   Keys.PlaneFormationLights , name  =  _('Lights formation 10%/30%/100%/Off'), category = _('Ins Wall panel')},
 
 {pressed = Keys.WinchDown, name = _('Winch Up/Down'), category = _('General')},
 	
@@ -303,10 +303,10 @@ keyCommands = {
 
 -- joystick axis 
 axisCommands = {
-{combos = defaultDeviceAssignmentFor("roll")	, action = iCommandPlaneRoll,			name = _('Roll Cyclic')},
-{combos = defaultDeviceAssignmentFor("pitch")	, action = iCommandPlanePitch,			name = _('Pitch Cyclic')},
-{combos = defaultDeviceAssignmentFor("rudder")	, action = iCommandPlaneRudder, 		name = _('Pedals')},
-{combos = defaultDeviceAssignmentFor("thrust")	, action = iCommandPlaneThrustCommon,	name = _('Collective')},
+{combos = defaultDeviceAssignmentFor("roll"),	action = iCommandPlaneRoll,			name = _('Cyclic Roll'),	category = _('Flight Control')},
+{combos = defaultDeviceAssignmentFor("pitch"),	action = iCommandPlanePitch,		name = _('Cyclic Pitch'),	category = _('Flight Control')},
+{combos = defaultDeviceAssignmentFor("rudder"),	action = iCommandPlaneRudder,		name = _('Rudder'),		category = _('Flight Control')},
+{combos = defaultDeviceAssignmentFor("thrust"),	action = iCommandPlaneCollective,	name = _('Collective'),	category = _('Flight Control')},
 
 {action = EFM_commands.throttleAxis		,	name = _('Both engines Throttle')},
 {action = EFM_commands.LeftThrottleAxis ,	name = _('Left Engine Throttle')},

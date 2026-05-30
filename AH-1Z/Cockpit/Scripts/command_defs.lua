@@ -210,6 +210,9 @@ EFM_commands = 	-- commands for use in EFM (make sure to copy to inputs.h)
     autoStart            = 3015,
     autoStop            = 3016,
     collectiveAxis        = 3017,
+	JoystickPitch		= 2001,
+	JoystickRoll		= 2002,
+	JoystickYaw			= 2003,
 	JoystickThrottle	= 2004,  --collective
 
 }
