@@ -184,7 +184,7 @@ AH1Z =
     mechanimations = {},
     Guns =
     {
-        -- M197 is a 20 mm Vulcan-family cannon; DCS exposes the M_61 template.
+        -- M197 uses 20 mm ammunition; DCS' M_61 gun template is the available 20 mm Vulcan-family source.
         gun_mount("M_61",
             { count = 750 },
             {
@@ -193,7 +193,7 @@ AH1Z =
                 supply_position = {2.10, -0.25, 0.0},
                 azimuth_initial = 0.0,
                 elevation_initial = 0.0,
-                max_burst_length = 750,
+                max_burst_length = 45,
                 rates = {730},
                 barrel_circular_error = 0.006,
                 effects = {fire_effect(20), smoke_effect()},

@@ -52,6 +52,7 @@ keyCommands = {
     {down = Keys.PickleOn, up = Keys.PickleOff, name = _('Weapon Release'), category = 'Weapons'},
 	{down = Keys.MasterArm, name = _('Master Arm'), category = _('Weapons')},
 	{down = Keys.ChangeWeapon, name = _('Change Weapon'), category = _('Weapons')},
+	{down = Keys.SelectRockets, name = _('Select Rockets'), category = _('Weapons')},
 	{down = 1507, name = _('Helmet Mount Display'), category = _('Systems')},
 	
 -- Countermeasures
@@ -311,6 +312,9 @@ axisCommands = {
 {action = EFM_commands.throttleAxis		,	name = _('Both engines Throttle')},
 {action = EFM_commands.LeftThrottleAxis ,	name = _('Left Engine Throttle')},
 {action = EFM_commands.RightThrottleAxis,	name = _('Right Engine Throttle')},
+
+{action = Keys.GunturretYawAxis,   name = _('Chin Turret Yaw (axis)')},
+{action = Keys.GunturretPitchAxis, name = _('Chin Turret Pitch (axis)')},
 
 },
 

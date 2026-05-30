@@ -79,6 +79,7 @@ keyCommands = {
     {combos = {{key = 'Space', reformers = {'LAlt'}}}, down = Keys.PickleOn, up = Keys.PickleOff, name = _('Weapon Release'), category = 'Weapons'},
 	{combos = {{key = 'M'}}, down = Keys.MasterArm, name = _('Master Arm'), category = _('Weapons')},
 	{combos = {{key = 'D'}}, down = Keys.GunSelector, name = _('Gun Selector'), category = _('Weapons')},
+	{combos = {{key = 'R'}}, down = Keys.SelectRockets, name = _('Select Rockets'), category = _('Weapons')},
 	--{combos = {{key = 'D'}}, down = Keys.ChangeWeapon, name = _('Change Weapon'), category = _('Weapons')},
 	--{combos = {{key = 'D', reformers = {'LAlt'}}}, down = Keys.GunSelector, name = _('Gun Selector'), category = _('Weapons')},
 

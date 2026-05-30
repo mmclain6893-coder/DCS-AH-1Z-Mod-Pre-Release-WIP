@@ -83,6 +83,8 @@ Keys =
 	GunturretRight  = 1504,
 	GunturretReset  = 1505,
 	GunturretUncage = 1506,
+	GunturretYawAxis   = 1515,
+	GunturretPitchAxis = 1516,
 	TargetBoxUp    = 1508,
 	TargetBoxDown  = 1509,
 	TargetBoxLeft  = 1510,
@@ -90,6 +92,7 @@ Keys =
 	TargetBoxReset = 1512,
 	TargetBoxLock  = 1513,
 	SelectTOW      = 1514,
+	SelectRockets  = 1517,
 }
 
 
